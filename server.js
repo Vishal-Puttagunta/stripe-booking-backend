@@ -5,6 +5,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 app.use(cors());
+app.options('*', cors()); // <--- THIS LINE
 app.use(express.json());
 
 // Mock list of blocked dates (you can later pull from a DB or file)
